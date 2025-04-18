@@ -83,8 +83,16 @@ struct ContentView: View {
             .navigationTitle("Notes")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: TagListView()) {
-                        Label("Manage Tags", systemImage: "tag")
+                    Menu {
+                        NavigationLink(destination: TagListView()) {
+                            Label("Manage Tags", systemImage: "tag")
+                        }
+                        
+                        NavigationLink(destination: BackgroundOperationsView()) {
+                            Label("Advanced Operations", systemImage: "gearshape.2")
+                        }
+                    } label: {
+                        Label("More", systemImage: "ellipsis.circle")
                     }
                 }
                 
